@@ -14,7 +14,17 @@ button.addEventListener('click', function calc(){
     let num2 = input2.value;
     let option = chose.value;
 
+    if (num1 == "0" && num2 == "0"){
+        output.innerText = "Ievadiet derīgus skaitļus";
+        return;
+    }
+    else if (num1 == "" || num2 == ""){
+        output.innerText = "Ievadiet abus skaitļus";
+        return;
+    }
+
     if (option == "Reiz"){
+        output.innerHTML = "Nevar reizināt ar 0"
         rez = num1 * num2;
         output.innerText = `${num1} * ${num2} = ${rez.toFixed(2)}`;
     } else {
